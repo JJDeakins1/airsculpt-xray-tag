@@ -13,3 +13,29 @@
   window.addEventListener("load", vcBackupComplete);
 </script>
 
+<!-- Contact Form Userdata -->
+<script>
+  // Extract userData from localStorage cookie - captureLeadData
+  var cookie = JSON.parse(window.localStorage.getItem("captureLeadData"));
+  var fn = cookie.firstName
+  var ln = cookie.lastName
+  var em = cookie.email
+  var ph = cookie.phone
+
+  // Function to execute when the conditions are met
+  function contactFormUserData() {
+    // Check if the user is on the "/vc-started" URL
+    if (window.location.pathname.replace(/\/$/, "") === "/thank-you") {
+      // Execute the code
+      edgetag("data", {
+        firstName: fn,
+        lastName: ln,
+        email: em,
+        phone: ph,
+      });
+    }
+  }
+
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", contactFormUserData);
+</script>
