@@ -1,1 +1,14 @@
 <!-- White Form Completed -->
+<script>
+    // Function to execute when the conditions are met
+    function whiteformCompleted() {
+      // Check if the user is on the "/vc-loading" URL
+      if (window.location.pathname.replace(/\/$/, "") === "/thank-loading") {
+        // Execute the code
+        edgetag("tag", "Lead");
+      }
+    }
+  
+    // Call the function when the page loads to check if the conditions are met
+    window.addEventListener("load", whiteformCompleted);
+  </script>

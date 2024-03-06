@@ -12,10 +12,14 @@
   });
 </script>
 
-<!-- Userdata -->
-<script>
-  edgetag("user", "email", "user@domain.com");
-  edgetag("user", "city", "fremont");
-</script>
-
 <!-- Intercom Email Capture -->
+<script>
+  // Listen for changes in the dataLayer
+window.addEventListener('dataLayer', function(event) {
+    // Check if the event matches the provided conditions
+    if (event.event === 'Provided Email Address') {
+        // Execute the code
+        edgetag("tag", "Lead");
+    }
+});
+</script>

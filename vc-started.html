@@ -1,3 +1,41 @@
 <!-- Virtual Consult Started -->
+<script>
+  // Function to execute when the conditions are met
+  function consultStarted() {
+    // Check if the user is on the "/vc-started" URL
+    if (window.location.pathname.replace(/\/$/, "") === "/vc-started") {
+      // Execute the code
+      edgetag("tag", "AddToCart");
+    }
+  }
 
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", consultStarted);
+</script>
 
+<!-- White Form Userdata -->
+<script>
+  // Extract userData from localStorage cookie - captureLeadData
+  var cookie = JSON.parse(window.localStorage.getItem("captureLeadData"));
+  var fn = cookie.firstName
+  var ln = cookie.lastName
+  var em = cookie.email
+  var ph = cookie.phone
+
+  // Function to execute when the conditions are met
+  function whiteformUserData() {
+    // Check if the user is on the "/vc-started" URL
+    if (window.location.pathname.replace(/\/$/, "") === "/vc-started") {
+      // Execute the code
+      edgetag("data", {
+        firstName: fn,
+        lastName: ln,
+        email: em,
+        phone: ph,
+      });
+    }
+  }
+
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", whiteformUserData);
+</script>

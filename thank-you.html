@@ -1,0 +1,15 @@
+<!-- Virtual Consult Started -->
+<script>
+  // Function to execute when the conditions are met
+  function vcBackupComplete() {
+    // Check if the user is on the "/vc-started" URL
+    if (window.location.pathname.replace(/\/$/, "") === "/thank-you") {
+      // Execute the code
+      edgetag("tag", "Schedule");
+    }
+  }
+
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", vcBackupComplete);
+</script>
+
