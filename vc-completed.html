@@ -1,34 +1,87 @@
-<!-- Web - Virtual Consult Completed -->
-
-
 <!-- Virtual Consult Completed (Med VC) -->
+<script>
+  // Function to execute when the conditions are met
+  function medVC() {
+    // Check if the user is on the "/vc-completed" URL
+    if (window.location.pathname.replace(/\/$/, "") === "/vc-completed") {
+      // Check if the URL parameters "inPerson" and "imagesSubmitted" are set to "true"
+      const urlParams = new URLSearchParams(window.location.search);
+      const inPerson = urlParams.get("inPerson");
+      const imagesSubmitted = urlParams.get("imagesSubmitted");
 
+      if (inPerson !== "true" && imagesSubmitted !== "true") {
+        // Execute the code
+        edgetag("tag", "CompleteRegistration");
+      }
+    }
+  }
+
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", medVC);
+</script>
 
 <!-- Virtual Consult Completed (Full VC) -->
+<script>
+  // Function to execute when the conditions are met
+  function fullVC() {
+    // Check if the user is on the "/vc-completed" URL
+    if (window.location.pathname.replace(/\/$/, "") === "/vc-completed") {
+      // Check if the URL parameters "inPerson" and "imagesSubmitted" are set to "true"
+      const urlParams = new URLSearchParams(window.location.search);
+      const inPerson = urlParams.get("inPerson");
+      const imagesSubmitted = urlParams.get("imagesSubmitted");
 
+      if (inPerson !== "true" && imagesSubmitted === "true") {
+        // Execute the code
+        edgetag("tag", "CompleteRegistration");
+      }
+    }
+  }
+
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", fullVC);
+</script>
 
 <!-- In-Person Scheduled (Med) -->
+<script>
+  // Function to execute when the conditions are met
+  function inPersonMed() {
+    // Check if the user is on the "/vc-completed" URL
+    if (window.location.pathname.replace(/\/$/, "") === "/vc-completed") {
+      // Check if the URL parameters "inPerson" and "imagesSubmitted" are set to "true"
+      const urlParams = new URLSearchParams(window.location.search);
+      const inPerson = urlParams.get("inPerson");
+      const imagesSubmitted = urlParams.get("imagesSubmitted");
 
+      if (inPerson === "true" && imagesSubmitted !== "true") {
+        // Execute the code
+        edgetag("tag", "FindLocation");
+      }
+    }
+  }
+
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", inPersonMed);
+</script>
 
 <!-- In-Person Completed (Full) -->
 <script>
-// Function to execute when the conditions are met
-function inPersonFull() {
+  // Function to execute when the conditions are met
+  function inPersonFull() {
     // Check if the user is on the "/vc-completed" URL
-    if (window.location.pathname === "/vc-completed") {
-        // Check if the URL parameters "inPerson" and "imagesSubmitted" are set to "true"
-        const urlParams = new URLSearchParams(window.location.search);
-        const inPerson = urlParams.get('inPerson');
-        const imagesSubmitted = urlParams.get('imagesSubmitted');
-        
-        if (inPerson === 'true' && imagesSubmitted === 'true') {
-            // Execute the code
-            edgetag('tag', 'SubmitApplication');
-        }
+    if (window.location.pathname.replace(/\/$/, "") === "/vc-completed") {
+      // Check if the URL parameters "inPerson" and "imagesSubmitted" are set to "true"
+      const urlParams = new URLSearchParams(window.location.search);
+      const inPerson = urlParams.get("inPerson");
+      const imagesSubmitted = urlParams.get("imagesSubmitted");
+
+      if (inPerson === "true" && imagesSubmitted === "true") {
+        // Execute the code
+        edgetag("tag", "SubmitApplication");
+      }
     }
-}
+  }
 
-// Call the function when the page loads to check if the conditions are met
-window.addEventListener('load', inPersonFull);
+  // Call the function when the page loads to check if the conditions are met
+  window.addEventListener("load", inPersonFull);
 </script>
-

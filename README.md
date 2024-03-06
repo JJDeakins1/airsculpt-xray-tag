@@ -8,7 +8,7 @@ This project involves setting up Xray tag for Airsculpt.com, a tool used for tra
 
 To set up Xray tag for Airsculpt.com, follow the steps below:
 
-1. **Include Xray Tag Script**: Add the Xray tag script to the website's HTML. This script enables tracking of user interactions and events.
+1. **Include Xray Tag Script**: Add the Xray tag script to the website's HTML. These script enables tracking of user interactions and events.
 
 2. **Conditional Code Snippets**: Implement conditional code snippets to trigger specific events based on user actions. These snippets are designed to execute only when certain criteria are met on the website.
 
